@@ -9,36 +9,39 @@ anotherRound = 1
 def playRound(playerChoice, computerChoice):
     global playerScore, computerScore
     if playerChoice == computerChoice:
-        print("Player choice is: " + playerChoice)
-        print("Computer choice is: " + computerChoice)
-        print("THIS GAME IS A DRAW")
+
+        print("Player choice: " + playerChoice + " Computer choice: " + computerChoice)
+        print("°°° THIS GAME IS A DRAW °°°")
+
     elif(playerChoice == "Rock" and computerChoice == "Scissors" 
         or playerChoice == "Paper" and computerChoice == "Rock" 
         or playerChoice == "Scissors" and computerChoice == "Paper"):
+
         playerScore += 1
-        print("Player choice is: " + playerChoice)
-        print("Computer choice is: " + computerChoice)
-        print("PLAYER 1 WIN")
+        print("Player choice: " + playerChoice + " Computer choice: " + computerChoice)
+        print("!!!!!!!!!!!!! PLAYER 1 WIN !!!!!!!!!!!!!") 
+
     else:
+
         computerScore += 1
-        print("Player choice is: " + playerChoice)
-        print("Computer choice is: " + computerChoice)
-        print("COMPUTER WIN")
-    print("Player Score: " , playerScore)
-    print("Computer Score: " , computerScore)
+        print("Player choice: " + playerChoice + " Computer choice: " + computerChoice)
+        print("!!!!!!!!!!!!! COMPUTER WIN !!!!!!!!!!!!!")
+
+        print("Player Score: " , playerScore)
+        print("Computer Score: " , computerScore)
+
 
 def game():
     global anotherRound, roundsPlayed
     if roundsPlayed == 0:
        print("WELCOME")
     else:
-        print("¿U Wanna play more? ")
-        print("1. yes ")
-        print("or press any key if not")
+        print("¿U Wanna play more? \n 1. yes \n or press any key if not")
         anotherRound = int(input())
+
         if anotherRound != 1:
             return
-    print("Select your option: 1. Rock 2. Paper 3. Scissors")
+    print("Select your option: \n 1. Rock \n 2. Paper \n 3. Scissors")
     playerIndex = int(input())
     playerChoice = gameChoices[playerIndex - 1]
 
@@ -51,5 +54,5 @@ def game():
 while True:
     game()
     if anotherRound != 1:
-        print("good bye")
+        print("BYE")
         break
